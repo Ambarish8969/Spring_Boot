@@ -1,0 +1,14 @@
+package com.demo2;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Student {
+	
+	Student(){
+		System.out.println("Hii ambi");
+	}
+	void display() {
+		System.out.println("Hello Students");
+	}
+}
