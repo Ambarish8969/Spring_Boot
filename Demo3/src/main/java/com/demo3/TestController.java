@@ -33,6 +33,6 @@ public class TestController {
 	String home5(String input) {
 		return "<h1>Hii "+input+" how are you?</h1>";
 	}
-	
+
 	 
 }
