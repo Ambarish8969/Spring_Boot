@@ -1,7 +1,0 @@
-package com.demo2;
-
-public class College {
-	void fee() {
-		System.out.println("College Fee");
-	}
-}

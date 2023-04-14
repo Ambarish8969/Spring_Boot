@@ -8,5 +8,8 @@
 </head>
 <body>
     <h1>Hii Ambi</h1>
+
+    <h1>Hii ${student}</h1>
+    <h1>Hii ${employee}</h1>
 </body>
 </html>
