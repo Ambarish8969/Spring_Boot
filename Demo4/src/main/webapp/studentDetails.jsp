@@ -11,5 +11,7 @@
     <h3>Student Name : ${name}</h3>
     <h3>Student Email : ${email}</h3>
     <h3>Student Phno : ${phno}</h3>
+    <br><br>
+    <button><a href="home.jsp" style="text-decoration: none;">Home Page</a></button>
 </body>
 </html>

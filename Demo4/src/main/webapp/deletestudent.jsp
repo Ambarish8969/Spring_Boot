@@ -11,6 +11,7 @@
         <input type="text" placeholder="id" name="id">
         <input type="submit" value="Submit">
     </form>
-    <a href="home.jsp">Home Page</a>
+    <br><br>
+    <button><a href="home.jsp" style="text-decoration: none;">Home Page</a></button>
 </body>
 </html>

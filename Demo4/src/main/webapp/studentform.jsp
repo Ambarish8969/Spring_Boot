@@ -14,5 +14,7 @@
         <input type="text" name="phno" placeholder="phno"><br><br>
         <input type="submit" value="Submit">
     </form>
+    <br><br>
+    <button><a href="home.jsp" style="text-decoration: none;">Home Page</a></button>
 </body>
 </html>

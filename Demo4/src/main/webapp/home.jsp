@@ -7,10 +7,13 @@
     <title>Student DB Home</title>
 </head>
 <body>
-    <a href="addstudent"> Add Student</a> <br><br>
-    <a href="deletestudent.jsp"> Delete Student</a><br><br>
-    <a href="updatestudent"> Update Student</a><br><br>
-    <a href="getstudent.jsp">Get Student</a><br><br>
-    <a href="studentDetails.jsp">Get All Students</a>
+
+    <h1>Welcome to Student DataBase Management System</h1>
+    <h2>Pleasd click on your choice ...</h2>
+    <button><a href="addstudent" style="text-decoration: none;"> Add Student</a></button><br><br>
+    <button><a href="deletestudent.jsp" style="text-decoration: none;"> Delete Student</a></button><br><br>
+    <button><a href="updatestudent" style="text-decoration: none;"> Update Student</a></button><br><br>
+    <button><a href="getstudent.jsp" style="text-decoration: none;">Get Student</a></button><br><br>
+    <button><a href="allstudents.jsp" style="text-decoration: none;">Get All Students</a></button>
 </body>
 </html>
