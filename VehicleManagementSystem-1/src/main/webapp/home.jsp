@@ -11,5 +11,6 @@
     <button><a href="addvehicle.jsp">Add Vehicle</a></button>
     <button><a href="deletevehicle.jsp">Delete Vehicle</a></button>
     <button><a href="getdetail.jsp">Get Vehicle Details</a></button>
+    <button><a href="updatebyid.jsp">Update Vehicle Details</a></button>
 </body>
 </html>

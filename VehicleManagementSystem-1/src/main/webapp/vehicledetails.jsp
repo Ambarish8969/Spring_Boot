@@ -11,5 +11,7 @@
     <h3>Vehicle Name : ${vehicleName}</h3>
     <h3>Vehicle Model : ${vehicleModel}</h3>
     <h3>Vehicle Color : ${vehicleColor}</h3>
+    <br><br>
+    <button><a href="home.jsp">Home Page</a></button>
 </body>
 </html>

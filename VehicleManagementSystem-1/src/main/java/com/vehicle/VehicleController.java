@@ -67,25 +67,23 @@ public class VehicleController {
 			return "error.jsp";
 		}
 	}
-
-//	@RequestMapping("/allvehicles")
-//	public String getAll(HttpSession h1) {
-//		Iterable<Vehicle> vehicles=repo.findAll();
-//		for(Vehicle vehicle:vehicles) {
-//			h1.setAttribute("vid", vehicle.getVid());
-//			h1.setAttribute("vehicleName", vehicle.getVehicleName());
-//			h1.setAttribute("vehicleModel", vehicle.getVehicleModel());
-//			h1.setAttribute("vehicleColor", vehicle.getVehicleColor());
-//			return "alldetails.jsp";
-//		}
-////		h1.setAttribute("details", vehicles);
-//		return "alldetails.jsp";
-//	}
 	
-	@RequestMapping("/allvehicles")
-	public String getAllTasks(Model model) {
-        Iterable<Vehicle> tasks = repo.findAll();
-        model.addAttribute("details", tasks);
-        return "alldetails.jsp"; // Return the name of the JSP view
-    }
+	@RequestMapping("/update")
+	public String update() {
+		return "updatebyid.jsp";
+	}
+	
+	@RequestMapping("/updatevehicle")
+	public String updateVehicle(HttpSession h1,Integer vid) {
+		Vehicle vehicle = repo.findById(vid).orElse(null);
+		if (vehicle != null) {
+			h1.setAttribute("vid", vehicle.getVid());
+			h1.setAttribute("vehicleName", vehicle.getVehicleName());
+			h1.setAttribute("vehicleModel", vehicle.getVehicleModel());
+			h1.setAttribute("vehicleColor", vehicle.getVehicleColor());
+			return "updatevehicle.jsp";
+		} else {
+			return "error.jsp";
+		}
+	}
 }
