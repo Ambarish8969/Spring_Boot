@@ -15,6 +15,7 @@ public interface EmployeeService {
 	List<Employee> getByDesignation(String designation);
 
 	Employee updateEmployee(Employee e);
-	
+
 	void deleteEmpById(Integer eid);
+
 }

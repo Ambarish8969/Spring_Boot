@@ -49,21 +49,16 @@ public class EmployeeController {
 	ResponseEntity<List<Employee>> getByLessSal(@RequestHeader Double sal) {
 		return new ResponseEntity<List<Employee>>(service.getByLessSal(sal), HttpStatus.FOUND);
 	}
-	
+
 	@PutMapping("/updateemp")
-	ResponseEntity<Employee> updateEmployee(@RequestBody Employee e){
-		return new ResponseEntity<Employee>(service.updateEmployee(e),HttpStatus.OK);
+	ResponseEntity<Employee> updateEmployee(@RequestBody Employee e) {
+		return new ResponseEntity<Employee>(service.updateEmployee(e), HttpStatus.OK);
 	}
-	
-	@DeleteMapping("/employees/{id}")
-	public ResponseEntity<Void> deleteEmpById(@PathVariable Integer id) {
-	    try {
-	        service.deleteEmpById(id);
-	        return ResponseEntity.noContent().build();
-	    } catch (NoSuchElementException e) {
-	        return ResponseEntity.notFound().build();
-	    } catch (Exception e) {
-	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-	    }
+
+	@DeleteMapping("/deleteemp")
+	ResponseEntity<Void> deleteEmpById(@RequestHeader Integer eid) {
+		service.deleteEmpById(eid);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
+
 }

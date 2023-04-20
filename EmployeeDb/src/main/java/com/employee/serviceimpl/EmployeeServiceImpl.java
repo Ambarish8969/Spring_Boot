@@ -54,13 +54,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-    public void deleteEmpById(Integer id) {
-        Optional<Employee> empOptional = repo.findById(id);
-        if (empOptional.isPresent()) {
-            repo.deleteById(id);
-        } else {
-            throw new NoSuchElementException("Employee with ID " + id + " not found");
-        }
-    }
+	public void deleteEmpById(Integer eid) {
+		Employee e1 = repo.findById(eid).orElse(null);
+		if (e1 != null) {
+			repo.deleteById(eid);
+		} else {
+			throw new ResourceNotFoundException("Employee", "id", eid);
+		}
+
+	}
 
 }
