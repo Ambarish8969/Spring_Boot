@@ -13,12 +13,14 @@ public class StudentController {
 	@Autowired
 	StudentRepo repo;
 	
+	
 	@ResponseBody
 	@RequestMapping("/home")
 	public String home() {
 		return "<h1>Home Page</h1>";
 	}
 	
+	// Add Student...
 	@RequestMapping("/addstudent")
 	public String addStudent() {
 		return "addstudent.jsp";
@@ -33,6 +35,7 @@ public class StudentController {
 		return "addstudent.jsp";
 	}
 	
+	// Delete Student...
 	@RequestMapping("/deletestudent")
 	public String deleteform() {
 		return "deletestudent.jsp";
@@ -49,11 +52,11 @@ public class StudentController {
 		}
 	}
 	
+	// Get Student...
 	@RequestMapping("/getstudent")
 	public String details() {
 		return "getdetails.jsp";
 	}
-	
 	
 	@RequestMapping("/studentdetails")
 	public String studentDetails(HttpSession h1,Integer id) {
@@ -63,6 +66,25 @@ public class StudentController {
 			h1.setAttribute("name", student.getName());
 			h1.setAttribute("marks", student.getMarks());
 			return "studentdetails.jsp";
+		}else {
+			throw new ResourceNotFoundException("Student", "Id", student.getId());
+		}
+	}
+	
+	// Update Student...
+	@RequestMapping("/update")
+	public String update() {
+		return "updatebyid.jsp";
+	}
+	
+	@RequestMapping("/updatestudent")
+	public String updateStudent(HttpSession h1,Integer id) {
+		Student student=repo.findById(id).orElse(null);
+		if(student != null) {
+			h1.setAttribute("id", student.getId());
+			h1.setAttribute("name", student.getName());
+			h1.setAttribute("marks", student.getMarks());
+			return "updatestudent.jsp";
 		}else {
 			throw new ResourceNotFoundException("Student", "Id", student.getId());
 		}

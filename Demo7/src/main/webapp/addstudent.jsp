@@ -8,9 +8,9 @@
 </head>
 <body>
     <form action="savestudent">
-        <input type="text" placeholder="enter Student id" name="id">
-        <input type="text" placeholder="enter Student name" name="name">
-        <input type="text" placeholder="enter Student marks" name="marks">
+        <input type="text" placeholder="enter Student id" name="id"> <br><br>
+        <input type="text" placeholder="enter Student name" name="name"> <br><br>
+        <input type="text" placeholder="enter Student marks" name="marks"> <br><br>
         <input type="submit" value="Add Student">
     </form>
 </body>
