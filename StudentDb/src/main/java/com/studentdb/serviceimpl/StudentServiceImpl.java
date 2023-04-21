@@ -1,5 +1,7 @@
 package com.studentdb.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,4 +44,16 @@ public class StudentServiceImpl implements StudentService {
 		repo.deleteById(sid);
 	}
 
+	@Override
+	public List<Student> getAllStudent() {
+		List<Student> students=repo.findAll();
+		return students;
+	}
+
+	@Override
+	public List<Student> getStudentByMarks(Integer marks) {
+		List<Student> students=repo.findByMarks(marks);
+		return students;
+	}
+	
 }

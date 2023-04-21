@@ -1,5 +1,7 @@
 package com.studentdb.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,5 +41,15 @@ public class StudentController {
 	ResponseEntity<Void> deleteStudent(@RequestHeader Integer sid){
 		service.deleteStudent(sid);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
+	
+	@GetMapping("/getallstudents")
+	ResponseEntity<List<Student>> getAllStudents(){
+		return new ResponseEntity<List<Student>>(service.getAllStudent(),HttpStatus.FOUND);
+	}
+	
+	@GetMapping("/getstudentsbymarks")
+	ResponseEntity<List<Student>> getStudentByMarks(@RequestHeader Integer marks){
+		return new ResponseEntity<List<Student>>(service.getStudentByMarks(marks),HttpStatus.FOUND);
 	}
 }
