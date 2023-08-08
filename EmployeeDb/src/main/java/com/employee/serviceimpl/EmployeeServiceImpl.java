@@ -15,7 +15,7 @@ import com.employee.service.EmployeeService;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
-	@Autowired
+//	@Autowired
 	EmployeeRepo repo;
 
 	@Override

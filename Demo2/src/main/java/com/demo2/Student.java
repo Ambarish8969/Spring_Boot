@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Scope(value = "prototype") // to create multiple objects.
 public class Student {
 	@Autowired // dependency injection
-	@Qualifier("2") // it is calling Rv class object.
+	@Qualifier("2") // It is calling "Rv.java" class object.
 	College c;
 	
 	Student() {

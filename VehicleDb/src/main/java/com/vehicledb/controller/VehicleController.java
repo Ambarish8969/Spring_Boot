@@ -5,18 +5,23 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vehicledb.module.Vehicle;
 import com.vehicledb.service.VehicleService;
 
 @RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000") // To connect with the Frontend(React.js)
 public class VehicleController {
 
 	@Autowired
@@ -27,8 +32,8 @@ public class VehicleController {
 		return new ResponseEntity<Vehicle>(service.addVehicle(v), HttpStatus.CREATED);
 	}
 
-	@GetMapping("/getvehiclebyid")
-	ResponseEntity<Vehicle> getVehicleById(@RequestHeader Integer vid) {
+	@GetMapping("/getvehiclebyid/{vid}")
+	ResponseEntity<Vehicle> getVehicleById(@PathVariable Integer vid) {
 		return new ResponseEntity<Vehicle>(service.getVehicleById(vid), HttpStatus.FOUND);
 	}
 

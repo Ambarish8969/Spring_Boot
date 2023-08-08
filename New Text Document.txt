@@ -1,0 +1,21 @@
+devlombok :
+
+It is used to create "Getters" ,"Setters" and "toString"
+
+@Data : It will generates the getters ,setters and stoString method of a class.
+
+@Getter : It will generates the getters.
+
+@Setter : It will generates the setters.
+
+
+Medic world:
+
+dependencies:
+
+-> lombok
+-> spring web
+-> springboot starter data jpa
+-> springboot devtools
+-> mysql connector
+-> spring boot starter parent 3.0.6
