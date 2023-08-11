@@ -1,0 +1,13 @@
+package com.ambi1;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Ambi1Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Ambi1Application.class, args);
+	}
+
+}
